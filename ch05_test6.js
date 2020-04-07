@@ -22,7 +22,7 @@ server.on('close', function() {
 
 //클라이언트의 요청을 처리하는 콜백 함수를 파라미터로 전달합니다.
 var server = http.createServer(function(req, res) {
-    console.log('클라이언트 요청이 등어왔습니다.');
+    console.log('클라이언트 요청이 들어왔습니다.');
     
     req.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
     res.write("<!DOCTYPE html>");
@@ -41,12 +41,10 @@ var server = http.createServer(function(req, res) {
 server.on('request', function(req, res) {
     console.log('클라이언트 요청이 들어왔습니다.')
     
-    var filename = 'gamja.jpg';
-    fs.readFile(filename, function(err, data) {
-        res.writeHead(200, {"Content-Type": "image/jpeg"});
-        res.wrute(data);
-        res.end();
-    });
+    var filename = 'gamja.jpg'
+    var infile = fs.createReadStream(filename, {flags: 'r'});
     
+    //파이프로 연결하여 알아서 처리하도록 설정하기
+    infile.pipe(res);
     
 });
