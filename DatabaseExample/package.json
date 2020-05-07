@@ -1,0 +1,26 @@
+{
+    "name": "DatabaseExample",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "cookie-parser": "^1.4.3",
+        "crypto": "^1.0.1",
+        "errorhandler": "^1.4.3",
+        "express": "^4.14.0",
+        "express-error-handler": "^1.1.0",
+        "express-session": "^1.14.2",
+        "http": "0.0.0",
+        "main": "^1000.0.1",
+        "mongodb": "^2.2.11",
+        "mongoose": "^5.9.10",
+        "parser": "^0.1.4",
+        "path": "^0.12.7",
+        "require": "^2.4.20",
+        "uglify-js": "^3.9.1",
+        "urlparser": "^0.3.9"
+    }
+}
